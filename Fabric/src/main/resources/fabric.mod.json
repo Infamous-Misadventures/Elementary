@@ -1,0 +1,39 @@
+{
+    "schemaVersion": 1,
+    "id": "elementary",
+    "version": "${version}",
+  
+    "name": "Elementary",
+    "description": "Library mod for the Dungeons Suite. Brings a lot of tools for modmakers to spice up their combat.",
+    "authors": [
+      "Patrigan"
+    ],
+    "contact": {
+      "homepage": "https://www.curseforge.com/minecraft/mc-mods/elementary",
+      "sources": "https://github.com/Infamous-Misadventures/Elementary"
+    },
+  
+    "license": "MIT License",
+    "icon": "assets/elementary/icon.png",
+  
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "com.patrigan.elementary.Elementary"
+      ]
+    },
+    "mixins": [
+      "elementary.mixins.json"
+    ],
+  
+    "depends": {
+      "fabricloader": ">=0.14",
+      "fabric": "*",
+      "minecraft": "1.19.x",
+      "java": ">=17"
+    },
+    "suggests": {
+      "another-mod": "*"
+    }
+  }
+  
