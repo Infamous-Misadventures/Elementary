@@ -1,11 +1,15 @@
 package com.patrigan.elementary.platform;
 
+import net.minecraft.world.entity.ai.attributes.Attribute;
+
+import java.util.function.Supplier;
+
 public interface ElementaryPlatform {
 
     /**
      * Base method for all main platform classes to call
      */
-    void setupFC();
+    void setupElementary();
 
     /**
      * Gets the name of the current platform
@@ -38,4 +42,10 @@ public interface ElementaryPlatform {
      * Helper method used across each modloader platform to appropriately register events
      */
     void setupEvents();
+
+    /**
+     * Helper method used across each modloader platform to appropriately register Attributes
+     * @return
+     */
+    Supplier<Attribute> registerAttribute(String id, Supplier<Attribute> supplier);
 }

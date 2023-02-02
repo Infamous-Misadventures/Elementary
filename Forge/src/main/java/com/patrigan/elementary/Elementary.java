@@ -8,7 +8,7 @@ public class Elementary {
     
     public Elementary() {
         ElementaryConstants.LOGGER.info("Setting FC Forge up!");
-        ElementaryConstants.PLATFORM.setupFC();
+        ElementaryConstants.PLATFORM.setupElementary();
     }
 
 }
