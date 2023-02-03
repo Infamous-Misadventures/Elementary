@@ -20,27 +20,27 @@ public class AttributeInit {
     }
 
     private static Supplier<Attribute> registerPower(String type) {
-        Supplier<Attribute> attributeSupplier = () -> new RangedAttribute(
-                "attribute.name.generic.elementary.power." + type,
-                1.0D,
-                0.0D,
-                1024.0D)
-                .setSyncable(true);
+        Supplier<Attribute> attributeSupplier = register(type + "_power",
+                () -> new RangedAttribute(
+                        "attribute.name.generic.elementary.power." + type,
+                        1.0D,
+                        0.0D,
+                        1024.0D)
+                        .setSyncable(true));
         ALL_ATTRIBUTES.add(attributeSupplier);
-        return register(type + "_power",
-                attributeSupplier);
+        return attributeSupplier;
     }
 
     private static Supplier<Attribute> registerResistance(String type) {
-        Supplier<Attribute> attributeSupplier = () -> new RangedAttribute(
-                "attribute.name.generic.elementary.resistance." + type,
-                1.0D,
-                0.0D,
-                2.0D)
-                .setSyncable(true);
+        Supplier<Attribute> attributeSupplier = register(type + "resistance",
+                () -> new RangedAttribute(
+                        "attribute.name.generic.elementary.resistance." + type,
+                        1.0D,
+                        0.0D,
+                        2.0D)
+                        .setSyncable(true));
         ALL_ATTRIBUTES.add(attributeSupplier);
-        return register(type + "resistance",
-                attributeSupplier);
+        return attributeSupplier;
     }
 
     private static Supplier<Attribute> register(String id, Supplier<Attribute> attributeSup) {
