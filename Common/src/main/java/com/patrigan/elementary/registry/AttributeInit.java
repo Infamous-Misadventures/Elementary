@@ -20,7 +20,7 @@ public class AttributeInit {
     }
 
     private static Supplier<Attribute> registerPower(String type) {
-        Supplier<Attribute> attributeSupplier = register(type + "_power",
+        Supplier<Attribute> attributeSupplier = register(type + "_focus",
                 () -> new RangedAttribute(
                         "attribute.name.generic.elementary.power." + type,
                         1.0D,
@@ -32,7 +32,7 @@ public class AttributeInit {
     }
 
     private static Supplier<Attribute> registerResistance(String type) {
-        Supplier<Attribute> attributeSupplier = register(type + "resistance",
+        Supplier<Attribute> attributeSupplier = register(type + "_resistance",
                 () -> new RangedAttribute(
                         "attribute.name.generic.elementary.resistance." + type,
                         1.0D,
