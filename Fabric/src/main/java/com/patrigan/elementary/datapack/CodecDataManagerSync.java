@@ -1,5 +1,6 @@
-package com.patrigan.elementary.util;
+package com.patrigan.elementary.datapack;
 
+import com.patrigan.elementary.util.CodecDataManager;
 import me.pepperbell.simplenetworking.S2CPacket;
 import me.pepperbell.simplenetworking.SimpleChannel;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;

@@ -4,7 +4,7 @@
   "package": "com.patrigan.elementary.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AttributesInvoker", "LivingEntityMixin"
+    "AttributesInvoker", "LivingEntityMixin", "ReloadableServerResourcesMixin"
   ],
   "client": [
   ],
