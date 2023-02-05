@@ -7,7 +7,7 @@ import java.util.ServiceLoader;
 
 public class ElementaryConstants {
 
-	public static final String MODID = "elementary";
+	public static final String MODID = "data/elementary";
 	public static final String MOD_NAME = "Elementary";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 	public static final ElementaryPlatform PLATFORM = load(ElementaryPlatform.class);
