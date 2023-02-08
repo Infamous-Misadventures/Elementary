@@ -1,8 +1,8 @@
 package com.patrigan.elementary.network.message;
 
 import com.mojang.serialization.Codec;
-import com.patrigan.elementary.registry.DamageTypeRegistry;
-import com.patrigan.elementary.type.DamageType;
+import com.patrigan.elementary.registry.damagetype.DamageTypeRegistry;
+import com.patrigan.elementary.damagetype.DamageType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.FriendlyByteBuf;

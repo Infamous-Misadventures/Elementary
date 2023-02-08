@@ -1,0 +1,8 @@
+{
+  "modifiers": [
+    {
+      "damage_type": "elementary:fire",
+      "percentage": 25
+    }
+  ]
+}

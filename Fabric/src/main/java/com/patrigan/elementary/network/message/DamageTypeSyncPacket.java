@@ -1,8 +1,8 @@
 package com.patrigan.elementary.network.message;
 
 import com.mojang.serialization.Codec;
-import com.patrigan.elementary.registry.DamageTypeRegistry;
-import com.patrigan.elementary.type.DamageType;
+import com.patrigan.elementary.registry.damagetype.DamageTypeRegistry;
+import com.patrigan.elementary.damagetype.DamageType;
 import me.pepperbell.simplenetworking.S2CPacket;
 import me.pepperbell.simplenetworking.SimpleChannel;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;

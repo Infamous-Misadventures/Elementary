@@ -1,10 +1,11 @@
 package com.patrigan.elementary.platform;
 
+import com.patrigan.elementary.damagetype.DamageTypeEvents;
 import com.patrigan.elementary.datapack.DatapackReloadListener;
 import com.patrigan.elementary.network.NetworkHandler;
 import com.patrigan.elementary.network.message.DamageTypeSyncPacket;
 import com.patrigan.elementary.registry.AttributeInit;
-import com.patrigan.elementary.registry.DamageTypeRegistry;
+import com.patrigan.elementary.registry.damagetype.DamageTypeRegistry;
 import com.patrigan.elementary.datapack.CodecDataManagerSync;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraftforge.common.MinecraftForge;
@@ -47,12 +48,14 @@ public class ElementaryForge implements ElementaryPlatform {
     }
 
     private void setupDatapackFormats() {
-        CodecDataManagerSync.subscribeAsSyncable(NetworkHandler.INSTANCE, DamageTypeSyncPacket::new, DamageTypeRegistry.DAMAGE_TYPES);
+        CodecDataManagerSync.subscribeAsSyncable(NetworkHandler.INSTANCE, DamageTypeSyncPacket::new, DamageTypeRegistry.REGISTRY);
     }
 
     @Override
     public void setupEvents() {
         MinecraftForge.EVENT_BUS.addListener(DatapackReloadListener::onAddReloadListeners);
+        MinecraftForge.EVENT_BUS.addListener(DamageTypeEvents::onLivingAttackEvent);
+        MinecraftForge.EVENT_BUS.addListener(DamageTypeEvents::onLivingHurtEvent);
     }
 
     @Override

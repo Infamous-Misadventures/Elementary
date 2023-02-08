@@ -1,4 +1,4 @@
-package com.patrigan.elementary.type;
+package com.patrigan.elementary.damagetype;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

@@ -1,12 +1,12 @@
 package com.patrigan.elementary.platform;
 
+import com.patrigan.elementary.damagetype.DamageTypeModifierList;
 import com.patrigan.elementary.datapack.CodecDataManagerSync;
-import com.patrigan.elementary.datapack.DatapackReloadListener;
 import com.patrigan.elementary.mixin.AttributesInvoker;
 import com.patrigan.elementary.network.NetworkHandler;
 import com.patrigan.elementary.network.message.DamageTypeSyncPacket;
-import com.patrigan.elementary.registry.DamageTypeRegistry;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import com.patrigan.elementary.registry.damagetype.DamageTypeRegistry;
+import com.patrigan.elementary.registry.damagetype.modifier.EnchantmentModifierRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 
@@ -42,7 +42,8 @@ public class ElementaryFabric implements ElementaryPlatform {
     }
 
     private void setupDatapackFormats() {
-        CodecDataManagerSync.subscribeAsSyncable(NetworkHandler.INSTANCE, DamageTypeSyncPacket::new, DamageTypeRegistry.DAMAGE_TYPES);
+        CodecDataManagerSync.subscribeAsSyncable(NetworkHandler.INSTANCE, DamageTypeSyncPacket::new, DamageTypeRegistry.REGISTRY);
+//        CodecDataManagerSync.subscribeAsSyncable(NetworkHandler.INSTANCE, DamageTypeModifierListSyncPacket::new, EnchantmentModifierRegistry.REGISTRY);
     }
 
     @Override

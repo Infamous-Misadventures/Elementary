@@ -12,18 +12,32 @@ public class AttributeInit {
 
     public static final List<Supplier<Attribute>> ALL_ATTRIBUTES = new ArrayList<>();
 
-    //Fire
-    public static final Supplier<Attribute> FIRE_POWER = registerPower("fire");
-    public static final Supplier<Attribute> FIRE_RESISTANCE = registerResistance("fire");
+    // Physical
+    public static final List<Supplier<Attribute>> SLASHING = registerElement("slashing");
+    public static final List<Supplier<Attribute>> PIERCING = registerElement("piercing");
+    public static final List<Supplier<Attribute>> BLUDGEONING = registerElement("bludgeoning");
+
+    // Elemental
+    public static final List<Supplier<Attribute>> FIRE = registerElement("fire");
+    public static final List<Supplier<Attribute>> ICE = registerElement("ice");
+    public static final List<Supplier<Attribute>> LIGHTNING = registerElement("lightning");
+    public static final List<Supplier<Attribute>> POISON = registerElement("poison");
 
     public static void init() {
     }
 
-    private static Supplier<Attribute> registerPower(String type) {
+    private static List<Supplier<Attribute>> registerElement(String element) {
+        return List.of(
+                registerFocus(element),
+                registerResistance(element)
+        );
+    }
+
+    private static Supplier<Attribute> registerFocus(String type) {
         Supplier<Attribute> attributeSupplier = register(type + "_focus",
                 () -> new RangedAttribute(
-                        "attribute.name.generic.elementary.power." + type,
-                        1.0D,
+                        "attribute.name.generic.elementary.focus." + type,
+                        1000.0D,
                         0.0D,
                         1024.0D)
                         .setSyncable(true));
@@ -35,7 +49,7 @@ public class AttributeInit {
         Supplier<Attribute> attributeSupplier = register(type + "_resistance",
                 () -> new RangedAttribute(
                         "attribute.name.generic.elementary.resistance." + type,
-                        1.0D,
+                        0.0D,
                         0.0D,
                         2.0D)
                         .setSyncable(true));
